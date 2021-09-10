@@ -1,21 +1,25 @@
 const express = require('express');
-const path = require('path');
 const app = express();
 
 app.use(express.static('public'));
-// テンプレートエンジンの指定
 app.set("view engine", "ejs");
 
 app.get('/', (req,res) => {
     const data = {
-        items: [
-            {name: "<h1>リンゴ</h1>"},
-            {name: "<h2>バナナ</h2>"},
-            {name: "<h3>スイカ</h3>"}
-        ]
+        isRegister: false,
+        pageTitle: 'Log in',
+        btnText: "Log in"
     };
-    // レンダリングを行う
-    res.render("index.ejs", data);
+    res.render("login.ejs", data);
+});
+
+app.get('/register', (req,res) => {
+    const data = {
+        isRegister: true,
+        pageTitle: 'Register',
+        btnText: 'Register'
+    };
+    res.render("login.ejs", data);
 });
 
 app.listen(3000);
