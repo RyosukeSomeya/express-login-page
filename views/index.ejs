@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ejs page</title>
+    </head>
+    <body>
+        <h1>ejs Page</h1>
+        <ul>
+            <% for (let item of items) { %>
+                <li><%- item.name %></li>
+            <% } %>
+        </ul>
+    </body>
+</html>
