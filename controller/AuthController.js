@@ -3,11 +3,19 @@ const views = '../views/'
 
 module.exports = {
   login: (req, res, next) => {
-    console.log('access')
-    res.render(views + 'index.ejs');
+    const data = {
+      isRegister: false,
+      pageTitle: 'Log in',
+      btnText: "Log in"
+    };
+    res.render(views + 'index.ejs', data);
   },
   registUser: (req, res, next) => {
-    console.log('access')
-    res.render(views + 'regist.ejs');
+    const data = {
+      isRegister: true,
+      pageTitle: 'Register',
+      btnText: 'Register'
+  };
+    res.render(views + 'regist.ejs', data);
   }
 }

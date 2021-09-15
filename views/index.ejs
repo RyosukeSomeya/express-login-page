@@ -1,4 +1,21 @@
 <!DOCTYPE html>
 <html>
-  top
+  <head>
+    <meta charset="UTF-8">
+    <title><%- pageTitle %></title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+      <header>
+          <h1 class="site-title">Express Sample</h1>
+          <div class="menu">
+              <a class="menu-item" href="/">Login</a>
+              <a class="menu-item" href="/register">Register</a>
+          </div>
+      </header>
+      <main class="form-container">
+        <h2 class="page-title"><%- pageTitle %></h2>
+        <%- include("./partial/_form.ejs") %>
+      </main>
+  </body>
 </html>
