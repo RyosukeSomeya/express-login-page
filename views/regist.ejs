@@ -12,6 +12,9 @@
         <a class="menu-item" href="/">Login</a>
       </div>
     </header>
+    <% if (messages) { %>
+      <%- messages %>
+    <% } %>
     <main class="form-container">
       <h2 class="page-title"><%- pageTitle %></h2>
       <%- include("./partial/_form.ejs") %>

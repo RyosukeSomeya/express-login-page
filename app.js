@@ -22,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // パスとルータの紐付け
 app.use('/', router.auth);
 app.use('/register', router.auth);
+app.use('/home', router.user); // 機能しない
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
