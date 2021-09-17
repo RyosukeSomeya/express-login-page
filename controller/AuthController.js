@@ -1,4 +1,5 @@
 const views = '../views/'
+const { validationResult } = require('express-validator');
 
 module.exports = {
   showLoginPage: (req, res, next) => {
@@ -39,9 +40,12 @@ module.exports = {
       };
       res.render(views + 'regist.ejs', data);
     } else {
-      const data = { name: req.body.name }
-      res.render(views + 'home.ejs', data)
-      // res.redirect('/home');
+      const data = {
+        isLoggedIn: true,
+        userName: req.body.name,
+        pageTitle: 'User Home',
+      }
+      return res.render('users/home', data);
     }
   },
 }

@@ -13,7 +13,11 @@
       </div>
     </header>
     <% if (messages) { %>
-      <%- messages %>
+      <ul class="error-messages">
+        <% for (var message of messages) { %>
+        <li class="error-messages-items"><%- message %></li>
+        <% } %>
+      </ul>
     <% } %>
     <main class="form-container">
       <h2 class="page-title"><%- pageTitle %></h2>
