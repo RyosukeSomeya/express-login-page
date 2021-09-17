@@ -45,7 +45,7 @@ module.exports = {
         userName: req.body.name,
         pageTitle: 'User Home',
       }
-      return res.render('users/home', data);
+      res.render('users/home', data);
     }
   },
 }
